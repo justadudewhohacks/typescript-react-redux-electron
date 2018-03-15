@@ -2,11 +2,12 @@ const webpack = require('webpack')
 const path = require('path');
 
 module.exports = {
+  target: 'electron',
   entry: [
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    './src/index.tsx'
+    './app/index.tsx'
   ],
   output: {
     path: path.join(__dirname, 'public'),
@@ -31,8 +32,8 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        include: path.join(__dirname, 'src'),
-        loader: ['react-hot-loader/webpack', 'ts-loader']
+        include: path.join(__dirname, 'app'),
+        loader: ['react-hot-loader/webpack', 'ts-loader?configFile=tsconfig.webpack.json']
       }
     ]
   },

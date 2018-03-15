@@ -1,5 +1,6 @@
 export enum ActionTypes {
-  SAY_HELLO = 'SAY_HELLO'
+  SAY_HELLO = 'SAY_HELLO',
+  RECEIVED_HELLO = 'RECEIVED_HELLO'
 }
 
 export type Action = {
@@ -12,3 +13,8 @@ export type Action = {
 export type State = {
   readonly message: string
 }
+
+export interface IHelloWorldService {
+  sayHelloToMainProcess: () => Promise<any>
+}
+

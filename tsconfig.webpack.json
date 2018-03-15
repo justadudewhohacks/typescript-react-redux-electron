@@ -5,18 +5,16 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "declaration": true,
     "noImplicitAny": true,
-    "noUnusedLocals": true,
+    //"noUnusedParameters": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "suppressImplicitAnyIndexErrors": true,
-    "strictNullChecks": true,
+    "declaration": false,
     "moduleResolution": "node",
     "module": "commonjs",
-    "target": "es6",
+    "target": "es5",
     "outDir": "dist",
     "baseUrl": ".",
     "importHelpers": true,
@@ -26,14 +24,24 @@
     "typeRoots": [
       "typings",
       "node_modules/@types"
-    ]
+    ],
+    "lib": [
+      "dom",
+      "es5",
+      "es2015.promise",
+      "es2015.generator",
+      "es2015.core"
+    ],
+    "jsx": "react"
   },
   "formatCodeOptions": {
     "indentSize": 2,
     "tabSize": 2
   },
+  "include": [
+    "app"
+  ],
   "exclude": [
-    "app",
     "node_modules",
     "dist"
   ]

@@ -12,6 +12,10 @@ export default function(state = INITIAL_STATE, action: Action) : State {
       return { ...state, message: payload.message }
     }
 
+    case ActionTypes.RECEIVED_HELLO: {
+      return { ...state, message: payload.message }
+    }
+
     default:
       return state
   }

@@ -6,7 +6,6 @@ import { RootState } from './redux/rootReducer'
 import { actions as helloWorldActions } from './redux/HelloWorld'
 
 function mapStateToProps(state: RootState) {
-  console.log(state)
   return {
     message: state.helloWorld.message
   }
@@ -14,13 +13,13 @@ function mapStateToProps(state: RootState) {
 
 function mapDispatchToProps(dispatch: any) {
   return {
-    sayHello: (message: string) => dispatch(helloWorldActions.sayHello(message))
+    sayHello: () => dispatch(helloWorldActions.sayHello())
   }
 }
 
 type RootProps = {
   message: string,
-  sayHello: (message: string) => void
+  sayHello: () => void
 }
 
 class Root extends React.Component<RootProps> {
